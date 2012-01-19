@@ -1,0 +1,298 @@
+MAILDIR=$HOME/Mail
+DEFAULT=$MAILDIR/Inbox
+SPAM_FOLDER=$MAILDIR/Spam
+FORMAIL=/usr/bin/formail
+SPAMASSASSIN=/usr/bin/spamassassin
+LOGFILE=$HOME/.procmaillog
+LOGABSTRACT=yes
+VERBOSE=yes
+
+# Catch duplicates using formail
+:0Whc: .msgid.lock
+| $FORMAIL -D 16384 .msgid.cache
+:0a
+$MAILDIR/Duplicates/
+
+# akiress.org
+:0
+* To:.*akiressorg@cox\.net
+$MAILDIR/Site/Admin
+
+# ============================================= #
+#		Mailing list recipes		#
+# ============================================= #
+
+# Funtoo Mailing List
+:0
+* List-Id:.*funtoo-dev\.googlegroups\.com
+$MAILDIR/Lists/Funtoo/
+
+# Gentoo Announcements mailing list
+:0
+* ^List-Id:.*gentoo-announce\.gentoo\.org
+$MAILDIR/Lists/Gentoo/Announcements/
+
+# Gentoo User
+:0
+* ^List-Id:.*gentoo-user\.gentoo\.org
+$MAILDIR/Lists/Gentoo/User/
+
+# Gentoo Dev mailing list
+:0
+* List-Id:.*gentoo-dev\.gentoo\.org
+$MAILDIR/Lists/Gentoo/Dev/
+
+# ============================= #
+#	Financial recipes	#
+# ============================= #
+
+# BRCC Debit Card
+:0
+* ^From:.*@BRCCDebitCard\.com
+$MAILDIR/Personal/Banks/
+
+# Paypal
+:0
+* ^From:.*@e\.paypal\.com
+$MAILDIR/Personal/Banks/
+
+:0
+* ^From:.*service@paypal\.com
+$MAILDIR/Personal/Banks/
+
+
+# ============================= #
+#	Personal recipes	#
+# ============================= #
+
+# akiress.org
+:0
+* ^To:.*@akiress\.org
+$MAILDIR/Personal/akiress.org/
+
+# Amazon
+:0
+* ^From:.*@amazon\.com
+$MAILDIR/Personal/Amazon/
+
+# Barnes and Noble
+:0
+* ^From:.*@e\.bn\.com
+$MAILDIR/Personal/Barnes\ and\ Noble/
+
+# Humble Bundle
+:0
+* ^From:.*@humblebundle\.com
+$MAILDIR/Personal/Games/Humble\ Bundle/
+
+# Newegg
+:0
+* ^From:.*@e\.newegg\.com
+$MAILDIR/Personal/Newegg/ 
+
+# Taxes
+:0
+* ^From:.*@online1\.turbotax\.com
+$MAILDIR/Personal/Taxes/
+
+:0
+* ^From:.*@news\.efile\.com
+$MAILDIR/Personal/Taxes/
+
+# Voicemail
+:0
+* ^Subject.*voicemail
+$MAILDIR/Personal/Voicemail
+
+# Facebook
+:0
+* ^From:.*@facebookappmail\.com
+$MAILDIR/Personal/Facebook/
+
+# ============================= #
+# 	Linux recipes		#
+# ============================= #
+
+# Funtoo
+:0
+* ^From:.*@funtoo\.org
+$MAILDIR/Linux/Funtoo
+
+# Gentoo
+:0
+* ^From:.*@gentoo\.org
+$MAILDIR/Linux/Gentoo
+
+# Github
+:0
+* ^From:.*@github\.com
+$MAILDIR/Linux/Github
+
+# ============================= #
+# 	Research recipes	#
+# ============================= #
+
+:0
+* ^From:.*@morethanseven\.net
+$MAILDIR/Research/Devops/
+
+:0
+* ^From:.*@hackernewsletter\.com
+$MAILDIR/Research/HackerNewsletter/
+
+:0
+* ^From:.*@peterc\.org
+$MAILDIR/Research/Ruby/
+
+:0
+* ^From:.*@d\.umn\.edu
+$MAILDIR/Research/Webdev/
+
+# ============================= #
+#	Bills recipes		#
+# ============================= #
+
+# AT&T
+:0
+* ^From:.*@email\.att-mail\.com
+$MAILDIR/Personal/Bills/ATT/
+
+# Cox
+:0
+* ^From:.*@cox\.com
+$MAILDIR/Personal/Bills/Cox/
+
+:0
+* ^From:.*Greater_Louisiana_Do_Not_Reply@cox\.com
+$MAILDIR/Personal/Bills/Cox/
+
+# Entergy
+:0
+* ^From:.*@entergy\.com
+$MAILDIR/Personal/Bills/Entergy/
+
+# Netflix
+:0
+* ^From:.*@netflix\.com
+$MAILDIR/Personal/Bills/Netflix/
+
+# ============================= #
+#	School recipes		#
+# ============================= #
+
+# BRCC - mybrcc
+:0
+* ^To:.*benjamin_k_guitreau@mybrcc\.edu
+$MAILDIR/School/BRCC/
+
+# BRCC - from school
+:0
+* ^From:.*@mybrcc\.edu
+$MAILDIR/School/BRCC/
+
+# College Central Network
+:0
+* ^From:.*@collegecentral\.com
+$MAILDIR/School/CCN/
+
+# LSU
+:0
+* ^From:.*@lsu\.edu
+$MAILDIR/School/LSU/
+
+:0
+* ^From:.*@lsumvs\.SNCC\.LSU\.EDU
+$MAILDIR/School/LSU/
+
+:0
+* ^From:.*@lsumvs\.sncc\.lsu\.edu
+$MAILDIR/School/LSU/
+
+# Student loans
+:0
+* ^From:.*@nelnet\.net
+$MAILDIR/School/Loans/
+
+# ============================= #
+#	Work recipes		#
+# ============================= #
+
+# 99 Designs
+:0
+* ^From:.*@99designs\.com
+$MAILDIR/Work/99Designs/
+
+# EA
+:0
+* ^From:.*@contractor\.ea\.com
+$MAILDIR/Work/EA/
+
+:0
+* ^From:.*@ea\.com
+$MAILDIR/Work/EA
+
+# Freelancer
+:0
+* ^From:.*noreply@freelancer\.com
+$MAILDIR/Work/Freelancer/
+
+# Snagajob
+:0
+* ^From:.*@snagajob\.com
+$MAILDIR/Work/Snagajob/
+
+# State jobs
+:0
+* ^From:.*@governmentjobs\.com
+$MAILDIR/Work/State/
+
+# ============================= #
+# 		Spam		#
+# ============================= #
+
+# Pipe the mail through spamassassin (replace 'spamassassin' with 'spamc'
+# if you use the spamc/spamd combination)
+#
+# The condition line ensures that only messages smaller than 250 kB
+# (250 * 1024 = 256000 bytes) are processed by SpamAssassin. Most spam
+# isn't bigger than a few k and working with big messages can bring
+# SpamAssassin to its knees.
+#
+# The lock file ensures that only 1 spamassassin invocation happens
+# at 1 time, to keep the load down.
+
+:0fw: spamassassin.lock
+* < 256000
+| spamassassin
+
+# Mails with a score of 15 or higher are almost certainly spam (with 0.05%
+# false positives according to rules/STATISTICS.txt). Let's put them in a
+# different mbox. (This one is optional.)
+:0:
+* ^X-Spam-Level: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+$MAILDIR/Spam
+
+# All mail tagged as spam (eg. with a score higher than the set threshold)
+# is moved to "probably-spam".
+:0:
+* ^X-Spam-Status: Yes
+$MAILDIR/Spam-Probable
+
+# Work around procmail bug: any output on stderr will cause the "F" in "From"
+# to be dropped.  This will re-add it.
+:0
+* ^^rom[ ]
+{
+  LOG="*** Dropped F off From_ header! Fixing up. "
+  
+  :0 fhw
+  | sed -e '1s/^/F/'
+}
+
+# ============================= #
+# 	Other Recipes		#
+# ============================= #
+
+# All the rest of our mail will be delivered to the default mailbox
+:0
+$DEFAULT/

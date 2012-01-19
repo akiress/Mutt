@@ -10,8 +10,8 @@ macro index "\Cb"     "<pipe-message>urlview<enter>"                       # URL
 macro generic G "<shell-escape>$HOME/.getmail/getmymail.zsh<return>"
 
 # Train SpamAssassin on unclassified messages and run them through procmail again
-macro index,pager S "<pipe-message>sa-learn --spam --no-sync --single | <enter-command>unset wait_key<enter><pipe-entry>/usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
-macro index,pager H "<pipe-message>sa-learn --ham --no-sync --single | <enter-command>unset wait_key<enter><pipe-entry>/usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
+macro index,pager S "<pipe-message>sa-learn --spam --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
+macro index,pager H "<pipe-message>sa-learn --ham --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
 
 macro index,pager P '<enter-command>unset wait_key<enter><pipe-entry>/usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>'
 
