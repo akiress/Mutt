@@ -1,0 +1,29 @@
+# Miscellaneous keybindings
+bind editor <delete> delete-char
+
+# Navigation
+macro index <tab> "<change-folder>?" "display list of mailboxes"
+macro index,pager "y" "<sync-mailbox><change-folder>?<toggle-mailboxes>"   # "-y" screen
+macro index "\Cb"     "<pipe-message>urlview<enter>"                       # URL viewer.
+
+# Fetch new mail
+macro generic G "<shell-escape>$HOME/.getmail/getmymail.zsh<return>"
+
+# Train SpamAssassin on unclassified messages and run them through procmail again
+macro index,pager S "<pipe-message>sa-learn --spam --no-sync --single | <enter-command>unset wait_key<enter><pipe-entry>/usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
+macro index,pager H "<pipe-message>sa-learn --ham --no-sync --single | <enter-command>unset wait_key<enter><pipe-entry>/usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
+
+macro index,pager P '<enter-command>unset wait_key<enter><pipe-entry>/usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>'
+
+# Search using nmzmail
+macro generic <esc>f "<shell-escape>nmzmail<return><esc><change-folder>~/.nmzmail/result<return>" "search using nmzmail"
+
+# Profile key bindings
+macro generic,pager <f6> "<enter-command>source ~/.mutt/profile\n" "load default profile"
+macro generic,pager <f7> "<enter-command>source ~/.mutt/profiles/benkguitreau@cox.net\n" "load profile: benkguitreau@cox.net"
+macro generic,pager <f8> "<enter-command>source ~/.mutt/profiles/akiress@cox.net\n" "load profile: akiress@cox.net"
+macro generic,pager <f9> "<enter-command>source ~/.mutt/profiles/akiress1976@gmail.com\n" "load profile: akiress1976@gmail.com"
+macro generic,pager <f10> "<enter-command>source ~/.mutt/profiles/benjamin_k_guitreau@mybrcc.edu\n" "load profile: benjamin_k_guitreau@mybrcc.edu"
+
+# View the path of the mail.
+macro index "\eh"    "<pipe-message>~/.mutt/bin/mailhops<enter>"                     

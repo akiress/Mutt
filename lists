@@ -1,0 +1,31 @@
+# "lists" adds a list of mailing lists addresses, so mutt knows about these
+# for showing them in the folder index and to allow replying to them with the
+# "list-reply" command.
+# The first part of the address (up to the @) should be used here.
+
+#unlists *
+#lists `cd ~/Mail/Lists && echo *`
+
+#unsubscribe *
+#subscribe `cd ~/Mail/Lists && echo *`
+
+#subscribe gaim-commits@lists.sourceforge.net
+#subscribe gaim-devel@lists.sourceforge.net
+#subscribe gainesville-pm@pm.org
+#subscribe galeon-announce@lists.sourceforge.net
+#subscribe galeon-devel@lists.sourceforge.net
+#subscribe galeon-user@lists.sourceforge.net
+#subscribe gentoo-announce@lists.gentoo.org
+#subscribe gentoo-dev@lists.gentoo.org
+#subscribe gentoo-user@lists.gentoo.org
+lists funtoo-dev@googlegroups.com
+lists gentoo-user@lists.gentoo.org
+lists gentoo-dev@lists.gentoo.org
+lists gentoo-announce@lists.gentoo.org
+lists "gentoo-.*@gentoo\\.org"
+
+subscribe funtoo-dev@googlegroups.com
+subscribe gentoo-user@lists.gentoo.org
+subscribe gentoo-dev@lists.gentoo.org
+subscribe gentoo-announce@lists.gentoo.org
+subscribe "gentoo-.*@gentoo\\.org"

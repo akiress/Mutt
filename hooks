@@ -1,0 +1,15 @@
+# This file contains hooks to set the From: header to something appropriate 
+# for the folder I'm in, and also to set signatures and PGP settings according 
+# to the folder
+
+#folder-hook . source ~/.mutt/profile
+#folder-hook . set pgp_autosign
+#folder-hook . unmy_hdr Reply-To:
+#folder-hook Work/Freelancer source ~/.mutt/profiles/akiress@cox.net
+#folder-hook Work/Freelancer source ~/.mutt/profiles/akiress@cox.net
+
+# Set the polling parameters to sane values for local folders versus IMAP folders
+#folder-hook . set mail_check=5
+#folder-hook . set timeout=5
+#folder-hook imaps://* set mail_check=600
+#folder-hook imaps://* set timeout=0

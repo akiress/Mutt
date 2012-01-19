@@ -1,0 +1,19 @@
+# Mutt sender profile:  benkguitreau@cox.net
+
+# Sending options
+set from="benkguitreau@cox.net"
+set realname="Ben K Guitreau"
+set use_from=yes
+set sendmail="/usr/bin/msmtp"
+set envelope_from=yes
+
+# Signature file
+set signature="~/.mutt/signatures/benkguitreau@cox.net"
+
+# Customized headers
+#unmy_hdr *                      # Remove all extra headers first
+#my_hdr From: Ben K Guitreau <benkguitreau@cox.net>
+#my_hdr Reply-To: Ben K Guitreau <benkguitreau@cox.net>
+
+# Include the profile name in the status line
+set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)---benkguitreau@cox.net-%>-(%P)---"
