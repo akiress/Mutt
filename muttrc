@@ -1,7 +1,6 @@
 source ~/.mutt/aliases
 source ~/.mutt/bindings
-source ~/.mutt/colors2
-source ~/.mutt/gpg
+source ~/.mutt/colors
 source ~/.mutt/hooks
 source ~/.mutt/lists
 source ~/.mutt/mailboxes

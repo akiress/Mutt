@@ -13,3 +13,5 @@
 #folder-hook . set timeout=5
 #folder-hook imaps://* set mail_check=600
 #folder-hook imaps://* set timeout=0
+
+#folder-hook . "push <collapse-all>"

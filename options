@@ -11,15 +11,15 @@ set date_format="!%Y-%m-%d %H:%M:%S %Z"
 set editor="vim -c 'set syntax=mail ft=mail enc=utf-8'"
 set folder_format="%@C %t %8s %d %N %f"
 set forward_format="Fwd: %s"
-set index_format="%4C %Z %{%b %d} %-16.16L (%4c) [%4.4H] %s"
+set index_format="%5C%5Z    %B    {%D}    %-20.20L    (%4c)    %s"
 set pager_format="%-10.10i %[!%a %b %d %R]"
-set pager_index_lines=15
+set pager_index_lines=30
 set pager_stop
 set postponed="=Postponed"
-#set query_command="abook --mutt-query '%s'"
 set record="=Inbox"
 set sort=threads
 set sort_aux=reverse-date
+set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
 #set status_format=" %r %b %f %n    Del %d    Msgs %m %l %> (%P)"
 unset confirmappend
 unset mark_old
@@ -29,11 +29,9 @@ set smart_wrap           # Wrap long lines at word boundary
 set wrapmargin=10
 set tilde                # Put the vi-like "~"s at the bottom of each message
 set menu_scroll          # Scroll on last line of menu (set) or do a nextpage?
-#set edit_headers         # Put headers in editor when composing messages
 set honor_followup_to    # Should the Mail-Followup-To header be honored?
 set pipe_decode=no       # Don't strip headers before piping a message
 set mime_forward=ask-no  # Ask if we want to forward the message as an attachment (so the receiver can properly view the message as it was delivered to us)
-#set send_charset="utf8"
 set charset="utf8"
 set header_cache="~/.mutt/cache/headers"
 
