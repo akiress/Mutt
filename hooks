@@ -1,17 +1,54 @@
-# This file contains hooks to set the From: header to something appropriate 
-# for the folder I'm in, and also to set signatures and PGP settings according 
-# to the folder
+folder-hook Site/Admin source ~/.mutt/profiles/akiressorg@cox.net
 
-#folder-hook . source ~/.mutt/profile
-#folder-hook . set pgp_autosign
-#folder-hook . unmy_hdr Reply-To:
-#folder-hook Work/Freelancer source ~/.mutt/profiles/akiress@cox.net
-#folder-hook Work/Freelancer source ~/.mutt/profiles/akiress@cox.net
+folder-hook Lists/Funtoo/Dev source ~/.mutt/profiles/akiress1976@gmail.com
+folder-hook Lists/Gentoo/Announcements source ~/.mutt/profiles/akiress1976@gmail.com
+folder-hook Lists/Gentoo/Dev source ~/.mutt/profiles/akiress1976@gmail.com
+folder-hook Lists/Gentoo/User source ~/.mutt/profiles/akiress1976@gmail.com 
+
+folder-hook Linux/Github source ~/.mutt/profiles/akiress@cox.net
+folder-hook Linux/Funtoo source ~/.mutt/profiles/akiress@cox.net
+folder-hook Linux/Gentoo source ~/.mutt/profiles/akiress@cox.net
+
+folder-hook Personal/akiress.org source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Amazon source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Banks source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Barnes\ and\ Noble source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Bills source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Bills/ATT source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Bills/Entergy source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Bills/Cox source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Bills/Netflix source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Facebook source ~/.mutt/profiles/akiress@cox.net
+folder-hook Personal/Games source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Games/Direct\ Drive source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Games/Humble\ Bundle source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Games/Steam source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Newegg source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Taxes source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook Personal/Voicemail source ~/.mutt/profiles/benkguitreau@cox.net
+
+folder-hook Research/Devops source ~/.mutt/profiles/akiress1976@gmail.com
+folder-hook Research/HackerNewsletter source ~/.mutt/profiles/akiress1976@gmail.com
+folder-hook Research/Ruby source ~/.mutt/profiles/akiress1976@gmail.com
+folder-hook Research/Webdev source ~/.mutt/profiles/akiress1976@gmail.com
+
+folder-hook School/BRCC source ~/.mutt/profiles/benjamin_k_guitreau@mybrcc.edu
+folder-hook School/CCN source ~/.mutt/profiles/benjamin_k_guitreau@mybrcc.edu
+folder-hook School/Financial\ Aid source ~/.mutt/profiles/benjamin_k_guitreau@mybrcc.edu
+folder-hook School/LSU source ~/.mutt/profiles/benkguitreau@cox.net
+folder-hook School/Stanford source ~/.mutt/profiles/akiress@cox.net
+
+folder-hook System/Backup source ~/.mutt/profiles/akiressorg@cox.net
+folder-hook System/LogWatch source ~/.mutt/profiles/akiressorg@cox.net
+
+folder-hook Work/99Designs source ~/.mutt/profiles/akiress@cox.net
+folder-hook Work/EA source ~/.mutt/profiles/akiress@cox.net
+folder-hook Work/Freelancer source ~/.mutt/profiles/akiress@cox.net
+folder-hook Work/Snagajob source ~/.mutt/profiles/akiress@cox.net
+folder-hook Work/State source ~/.mutt/profiles/akiress@cox.net
 
 # Set the polling parameters to sane values for local folders versus IMAP folders
 #folder-hook . set mail_check=5
 #folder-hook . set timeout=5
 #folder-hook imaps://* set mail_check=600
 #folder-hook imaps://* set timeout=0
-
-#folder-hook . "push <collapse-all>"
