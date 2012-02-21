@@ -6,8 +6,10 @@
 # ========== #
 macro index <tab> "<change-folder>?" "display list of mailboxes"
 
-bind pager <up> previous-line
-bind pager <down> next-line
+bind pager <up> previous-entry
+bind pager <down> next-entry
+bind pager <PageUp> previous-line
+bind pager <PageDN> next-line
 
 # ======= #
 # Getmail #
@@ -17,8 +19,10 @@ macro generic G "<shell-escape>$HOME/.getmail/getmymail.zsh<return>"
 # ===================== #
 # SpamAssassin Training #
 # ===================== #
-macro index,pager S "<pipe-message>sa-learn --spam --showdots --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
-macro index,pager H "<pipe-message>sa-learn --ham --showdots --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
+macro index,pager S "<pipe-message>sb_filter.py -s -f | procmail<return><delete-message>" "retrain SpamBayes on message as spam"
+macro index,pager H "<pipe-message>sb_filter.py -g -f | procmail<return><delete-message>" "retrain SpamBayes on message as ham"
+#macro index,pager S "<pipe-message>sa-learn --spam --showdots --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
+#macro index,pager H "<pipe-message>sa-learn --ham --showdots --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
 macro index Y "<pipe-message>sa-learn --sync<enter>"
 
 # ================================================ #
@@ -30,6 +34,21 @@ macro index,pager P '<enter-command>unset wait_key<enter><pipe-entry>/usr/bin/pr
 # Search using nmzmail #
 # ==================== #
 macro generic <esc>f "<shell-escape>nmzmail<return><esc><change-folder>~/.nmzmail/result<return>" "search using nmzmail"
+
+# Macros to toggle the sidebar visibility                                       
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+# abook query
+macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+macro generic,index,pager Z "<shell-escape>abook<return>" "launch abook"
+
+#--------------------------------------------------------------------------
+# Sidebar keys
+#--------------------------------------------------------------------------
+bind index,pager \i sidebar-prev
+bind index,pager \k sidebar-next
+bind index,pager \j sidebar-open
 
 # ======== #
 # Profiles #

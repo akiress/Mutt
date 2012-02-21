@@ -37,12 +37,13 @@ color index         color64     color232        "~N~v~(~N)"                 # co
 color index         color39     color232        "~P"                        # from me
 # statusbg used to indicated flagged when foreground color shows other status
 # for collapsed thread
-color index         color160    color232        "~v~(~F)!~N"                # collapsed thread with flagged, no unread
-color index         color226    color232        "~v~(~F~N)"                 # collapsed thread with some unread & flagged
-color index         color64     color232        "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
-color index         color64     color232        "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
-color index         cyan        color232        "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
-color index         color226    color160        "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
+color index         color127    color232        "~v~R!~N"                      # collapsed thread with no unread"
+#color index         color160    color232        "~v~(~F)!~N"                # collapsed thread with flagged, no unread
+#color index         color226    color232        "~v~(~F~N)"                 # collapsed thread with some unread & flagged
+#color index         color64     color232        "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
+#color index         color64     color232        "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
+#color index         cyan        color232        "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
+#color index         color226    color160        "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
 
 # ================= #
 #       Header      #

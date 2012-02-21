@@ -4,7 +4,7 @@
 set from="benkguitreau@cox.net"
 set realname="Ben K Guitreau"
 set use_from=yes
-set sendmail="/usr/bin/msmtp"
+set sendmail="/usr/bin/msmtp -a Cox1"
 set envelope_from=yes
 
 # Signature file

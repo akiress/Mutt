@@ -47,6 +47,8 @@ folder-hook Work/Freelancer source ~/.mutt/profiles/akiress@cox.net
 folder-hook Work/Snagajob source ~/.mutt/profiles/akiress@cox.net
 folder-hook Work/State source ~/.mutt/profiles/akiress@cox.net
 
+folder-hook . "exec collapse-all"
+
 # Set the polling parameters to sane values for local folders versus IMAP folders
 #folder-hook . set mail_check=5
 #folder-hook . set timeout=5

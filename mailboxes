@@ -9,19 +9,15 @@ mailboxes =Inbox
 mailboxes =Sent
 mailboxes =Spam
 mailboxes =Spam-Probable
-
-mailboxes =Site/Admin
-
+mailboxes =Admin
 mailboxes =Lists/Funtoo/Dev
 mailboxes =Lists/Gentoo/Announcements 
 mailboxes =Lists/Gentoo/Dev
 mailboxes =Lists/Gentoo/User
-
 mailboxes =Linux
 mailboxes =Linux/Github
 mailboxes =Linux/Funtoo
 mailboxes =Linux/Gentoo
-
 mailboxes =Personal
 mailboxes =Personal/akiress.org
 mailboxes =Personal/Amazon
@@ -40,24 +36,20 @@ mailboxes =Personal/Games/Steam
 mailboxes =Personal/Newegg
 mailboxes =Personal/Taxes
 mailboxes =Personal/Voicemail
-
 mailboxes =Research
 mailboxes =Research/Devops
 mailboxes =Research/HackerNewsletter
 mailboxes =Research/Ruby
 mailboxes =Research/Webdev
-
 mailboxes =School
 mailboxes =School/BRCC
 mailboxes =School/CCN
 mailboxes =School/Financial\ Aid
 mailboxes =School/LSU
 mailboxes =School/Stanford
-
 mailboxes =System 
 mailboxes =System/Backup 
 mailboxes =System/LogWatch
-
 mailboxes =Work
 mailboxes =Work/99Designs
 mailboxes =Work/EA
