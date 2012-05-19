@@ -6,24 +6,15 @@
 # ========== #
 macro index <tab> "<change-folder>?" "display list of mailboxes"
 
-bind pager <up> previous-entry
-bind pager <down> next-entry
-bind pager <PageUp> previous-line
-bind pager <PageDN> next-line
+bind pager <up>	previous-line
+bind pager <down> next-line
+bind pager <left> previous-entry
+bind pager <right> next-entry
 
 # ======= #
 # Getmail #
 # ======= #
 macro generic G "<shell-escape>$HOME/.getmail/getmymail.zsh<return>"
-
-# ===================== #
-# SpamAssassin Training #
-# ===================== #
-macro index,pager S "<pipe-message>sb_filter.py -s -f | procmail<return><delete-message>" "retrain SpamBayes on message as spam"
-macro index,pager H "<pipe-message>sb_filter.py -g -f | procmail<return><delete-message>" "retrain SpamBayes on message as ham"
-#macro index,pager S "<pipe-message>sa-learn --spam --showdots --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
-#macro index,pager H "<pipe-message>sa-learn --ham --showdots --no-sync --single | /usr/bin/procmail /home/akiress/.procmailrc<enter><delete-message><enter-command>set wait_key<enter>"
-macro index Y "<pipe-message>sa-learn --sync<enter>"
 
 # ================================================ #
 # Procmail Resorting: Used when I add a new filter #
@@ -40,8 +31,8 @@ macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
 # abook query
-macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
-macro generic,index,pager Z "<shell-escape>abook<return>" "launch abook"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
 
 #--------------------------------------------------------------------------
 # Sidebar keys
@@ -53,11 +44,11 @@ bind index,pager \j sidebar-open
 # ======== #
 # Profiles #
 # ======== #
-macro generic,pager <f6> "<enter-command>source ~/.mutt/profile\n" "load default profile"
-macro generic,pager <f7> "<enter-command>source ~/.mutt/profiles/benkguitreau@cox.net\n" "load profile: benkguitreau@cox.net"
-macro generic,pager <f8> "<enter-command>source ~/.mutt/profiles/akiress@cox.net\n" "load profile: akiress@cox.net"
-macro generic,pager <f9> "<enter-command>source ~/.mutt/profiles/akiress1976@gmail.com\n" "load profile: akiress1976@gmail.com"
-macro generic,pager <f10> "<enter-command>source ~/.mutt/profiles/benjamin_k_guitreau@mybrcc.edu\n" "load profile: benjamin_k_guitreau@mybrcc.edu"
+macro generic <f6> "<enter-command>source ~/.mutt/profile\n" "load default profile"
+macro generic <f7> "<enter-command>source ~/.mutt/profiles/benkguitreau@cox.net\n" "load profile: benkguitreau@cox.net"
+macro generic <f8> "<enter-command>source ~/.mutt/profiles/akiress@cox.net\n" "load profile: akiress@cox.net"
+macro generic <f9> "<enter-command>source ~/.mutt/profiles/akiress1976@gmail.com\n" "load profile: akiress1976@gmail.com"
+macro generic <f10> "<enter-command>source ~/.mutt/profiles/benjamin_k_guitreau@mybrcc.edu\n" "load profile: benjamin_k_guitreau@mybrcc.edu"
 
 # ===================================== #
 #  Mailhops: View the path of the mail  #

@@ -7,9 +7,8 @@ set spoolfile=~/Mail/Inbox
 mailboxes !
 mailboxes =Inbox
 mailboxes =Sent
-mailboxes =Spam
-mailboxes =Spam-Probable
 mailboxes =Admin
+mailboxes =Lists
 mailboxes =Lists/Funtoo/Dev
 mailboxes =Lists/Gentoo/Announcements 
 mailboxes =Lists/Gentoo/Dev
