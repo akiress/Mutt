@@ -34,9 +34,12 @@ macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
 macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
 
-#--------------------------------------------------------------------------
-# Sidebar keys
-#--------------------------------------------------------------------------
+# Mark all messages as read
+macro index M "T.*\n;WN" "Mark all messages as read"
+
+# ============ #
+# Sidebar keys #
+# ============ #
 bind index,pager \i sidebar-prev
 bind index,pager \k sidebar-next
 bind index,pager \j sidebar-open
@@ -55,6 +58,32 @@ macro generic <f10> "<enter-command>source ~/.mutt/profiles/benjamin_k_guitreau@
 # http://www.spinnaker.de/mutt/mailhops #
 # ===================================== #
 macro index "\eh"    "<pipe-message>~/.mutt/bin/mailhops<enter>" 
+
+# ===================================== #
+# Pressing a key will do this in the index:
+# S (shift-s): Learn the message as spam; Copy message to spam mailbox; Mark the
+# (original) message to be deleted.
+# H (shift-h): Learn the message as ham (_not_ spam)
+# E (shift-e): Re-build the SpamAssassin database
+
+# Bind a spam macro to do this for us:
+#       1) Pipe the spam to sa-learn without rebuilding the database
+#               - use loging
+#       2) Copy the message to the spam folder
+#       3) Delete the message from the original folder
+macro index S '<enter-command>unset wait_key<enter><shell-escape>date >> ~/Mail/.sa-learn.log<enter><pipe-message>sa-learn --spam --no-rebuild -D >> ~/Mail/.sa-learn.log 2>&1 &<enter><copy-message>~/Mail/spam/ <enter><enter><delete-message><enter-command>set wait_key=yes<enter>'
+
+# now make another set, but for ham (not spam) messages.
+# tell sa-learn to learn ham message. dont delete it or move it.
+macro index H '<enter-command>unset wait_key<enter><shell-escape>date >> ~/Mail/.sa-learn.log<enter><pipe-message>sa-learn --ham --no-rebuild -D >> ~/Mail/.sa-learn.log 2>&1 &<enter><enter-command>set wait_key=yes<enter>'
+
+# a macro that tells SA to rebuild its database
+macro index E '<enter-command>unset wait_key<enter><shell-escape>date >> ~/Mail/.sa-learn.log<enter><shell-escape>sa-learn --rebuild -D >> ~/Mail/.sa-learn.log 2>&1 &<enter><enter-command>set wait_key=yes<enter>'
+
+# If you dont want to log the output of sa-learn, then remove all occurences of
+# ``<shell-escape>date >> ~/Mail/.sa-learn.log<enter>'' and
+# ``>> ~/Mail/.sa-learn.log 2>&1'' If you dont want to have debug information in
+# the output, remove the ``-D'' flag from sa-learn.
 
 # =============================================================================================
 

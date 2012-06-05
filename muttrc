@@ -8,4 +8,3 @@ source ~/.mutt/options
 source ~/.mutt/profile
 source ~/.mutt/views
 source ~/.mutt/sidebar
-source ~/.mutt/gpg
