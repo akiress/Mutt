@@ -9,8 +9,16 @@ mailboxes =Inbox
 mailboxes =Spam
 mailboxes =Probable
 
+mailboxes =LSU
+mailboxes =LSU/bguitr1
+mailboxes =LSU/LSU
+mailboxes =LSU/I3
+
+mailboxes =TangViz
+mailboxes =TangViz/Core
+mailboxes =TangViz/SVN
+
 mailboxes =School
-mailboxes =School/LSU
 mailboxes =School/BRCC
 mailboxes =School/HHMI
 mailboxes =School/PTK
@@ -18,6 +26,7 @@ mailboxes =School/CCN
 mailboxes =School/Financial\ Aid
 mailboxes =School/Stanford
 mailboxes =School/Loans
+mailboxes =School/Online
 
 mailboxes =Lists
 mailboxes =Lists/Funtoo-Dev
@@ -40,6 +49,7 @@ mailboxes =My\ Finances/Netflix
 mailboxes =My\ Finances/Geico
 mailboxes =My\ Finances/Banks
 mailboxes =My\ Finances/Taxes
+mailboxes =My\ Finances/Campus\ Federal
 
 mailboxes =Purchasing
 mailboxes =Purchasing/Amazon

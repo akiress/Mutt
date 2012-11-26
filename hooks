@@ -3,6 +3,11 @@ folder-hook Gentoo-Announcements source ~/.mutt/profiles/akiress1976@gmail.com
 folder-hook Gentoo-Dev source ~/.mutt/profiles/akiress1976@gmail.com
 folder-hook Gentoo-User source ~/.mutt/profiles/akiress1976@gmail.com 
 
+folder-hook LSU/bguitr1 source ~/.mutt/profiles/bguitr1@tigers.lsu.edu
+folder-hook LSU/LSU source ~/.mutt/profiles/bguitr1@tigers.lsu.edu
+folder-hook LSU/I3 source ~/.mutt/profiles/bguitr1@tigers.lsu.edu
+folder-hook Tangviz/Core source ~/.mutt/profiles/bguitr1@tigers.lsu.edu
+
 folder-hook Linux/Github source ~/.mutt/profiles/akiress@cox.net
 folder-hook Linux/Funtoo source ~/.mutt/profiles/akiress@cox.net
 folder-hook Linux/Gentoo source ~/.mutt/profiles/akiress@cox.net
