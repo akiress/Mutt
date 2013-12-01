@@ -1,0 +1,50 @@
+[general]
+ui = ttyui
+accounts = bguitr1
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes " 
+peritem = "+%(accountname)s/%(foldername)s" 
+sep = " " 
+footer = "\n"
+
+[Account bguitr1]
+localrepository = bguitr1-Local
+remoterepository = bguitr1-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository bguitr1-Local]
+type = Maildir
+localfolders = ~/.mail/bguitr1
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+    'sent':    '[Gmail]/Sent Mail',
+    'flagged': '[Gmail]/Starred',
+    'trash':   '[Gmail]/Trash',
+    'archive': '[Gmail]/All Mail',
+    }.get(folder, folder)
+
+[Repository bguitr1-Remote]
+maxconnections = 1
+type = Gmail
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = username goes here
+remotepasseval = keyring.get_password('gmail', 'bguitr1')
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+    '[Gmail]/Sent Mail': 'sent',
+    '[Gmail]/Starred':   'flagged',
+    '[Gmail]/Trash':     'trash',
+    '[Gmail]/All Mail':  'archive',
+    }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+    'Nagios',
+    'Django',
+    'Flask',
+    '[Gmail]/Important',
+    '[Gmail]/Spam',
+    ]

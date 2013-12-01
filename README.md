@@ -1,1 +1,0 @@
-Credit due to dwc for his mutt configuration which I have used as a basis for my configuration.  Some parts are still similar to his but the more I use mutt every day, I change some configurations more to my preference. Credit golodhrim for his mutt config on funtoo.org wiki that showed me the use of the sidebar.
